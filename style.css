@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+:root {
+    --clr-background: rgba(19, 20, 20, 0.7);;
+    --clr-light: #fff;
+    --clr-dark: #000000;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1rem;
+    --fs-body: 1rem;
+}
+
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+    color: var(--clr-light);
+    background-color: var(--clr-background);
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: var(--fw-reg);
+}
+
+
+section {
+    padding: 5em 2em;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* Intro */
+
+
+.intro {
+    background-color: var(--clr-dark);
+    background-image: url(img/mallet.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--clr-light);
+    height: 100vh; /* 100% of the viewport height */
+    width: 100vw; /* 100% of the viewport width */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+
+.intro--title {
+    width: 100%;
+}
+
+
+.intro--title h1 {
+    background-color: var(--clr-background);
+    text-align: center; /* Center the text within the h1 */
+}
+
+
+/* Dropbox */
+
+
+.dropbox {
+    background-color: var(--clr-background);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* 100% of the viewport height */
+    width: 100vw; /* 100% of the viewport width */
+    display: flex;
+    align-items: center;
+}
+
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
