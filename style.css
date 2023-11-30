@@ -8,7 +8,8 @@
 :root {
     --clr-background: rgba(19, 20, 20, 0.7);;
     --clr-light: #fff;
-    --clr-dark: #000000;
+    --clr-dark: #232121;
+    --clr-black: #000000;
 
     --fw-reg: 300;
     --fw-bold: 900;
@@ -60,14 +61,11 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     color: var(--clr-light);
-    height: 100vh; /* 100% of the viewport height */
-    width: 100vw; /* 100% of the viewport width */
-
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
 }
 
 
@@ -78,26 +76,71 @@ img {
 
 .intro--title h1 {
     background-color: var(--clr-background);
-    text-align: center; /* Center the text within the h1 */
+    text-align: center;
 }
+
+
+/* About Us */
+
+.about, .pricing {
+    background-color: var(--clr-dark);
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Pricing */
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+}
+
+tr {
+    text-align: left;
+}
+
+td {
+    padding: 5px 15px; 
+}
+
+
+
+.pricing--price {
+    text-align: center;
+}
+
+
+tr:hover {background-color: #a8a8a8;}
+
+
 
 
 /* Dropbox */
 
 
 .dropbox {
-    background-color: var(--clr-background);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh; /* 100% of the viewport height */
-    width: 100vw; /* 100% of the viewport width */
-    display: flex;
-    align-items: center;
+    background-color: var(--clr-black);
+    height: 40vh;
+    width: 100%;
+    text-align: center;
+}
+
+
+.dropbox--title {
+    padding: 15px;
+}
+
+
+.upload {
+    text-align: center;
+    padding-top: 20px;
 }
 
 
 /* Typography */
+
 
 h1,
 h2,
