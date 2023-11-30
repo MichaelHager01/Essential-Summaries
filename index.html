@@ -20,27 +20,84 @@
         </div>
     </header>
 
+    <!-- About us -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>
+            30 plus years of litigation experience. We understand how summaries can speed the path to mediation, influence the decision to hire experts and/or dismiss the case. We are here to assist and help reach your goals.
+        </p>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <h2>Pricing</h2>
+        <table>
+            <tr>
+                <td>Records up to 500 pages</td>
+                <td class="pricing--price">$185</td>
+            </tr>
+            <tr>
+                <td>Records of 501-2,000 pages</td>
+                <td class="pricing--price">$545</td>
+            </tr>
+            <tr>
+                <td>Records of 2,001-4,000 pages</td>
+                <td class="pricing--price">$745</td>
+            </tr>
+            <tr>
+                <td>Records of 4,001-6,000 pages</td>
+                <td class="pricing--price">$945</td>
+            </tr>
+            <tr>
+                <td>Records over 6,000 pages</td>
+                <td class="pricing--price">
+                    <a href="mailto:rmagaly042@gmail.com">Contact us</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Dropbox -->
     <form class="dropbox">
-        <div class="dropbox--item">
-            <label for="depositionFile">Deposition:</label>
-            <input type="file" id="depositionFile" name="fileUpload" accept=".pdf">
-        </div>
-
-        <div class="dropbox--item">
-            <label for="medicalRecordsFile">Medical Records:</label>
-            <input type="file" id="medicalRecordsFile" name="fileUpload" accept=".pdf">
-        </div>
-
-        <div class="dropbox--item">
-            <label for="discoveryFile">Discovery:</label>
-            <input type="file" id="discoveryFile" name="fileUpload" accept=".pdf">
-        </div>
-
-        <input type="submit" value="Upload">
-
+        <h3 class="dropbox--title">Send files for summary</h3>
+        <table>
+            <tr>
+                <div class="dropbox--item">
+                    <td>
+                        <label for="depositionFile">Deposition:</label>
+                    </td>
+                    <td>
+                        <input type="file" id="depositionFile" name="fileUpload" accept=".pdf">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="dropbox--item">
+                    <td>
+                        <label for="medicalRecordsFile">Medical Records:</label>
+                    </td>
+                    <td>
+                        <input type="file" id="medicalRecordsFile" name="fileUpload" accept=".pdf">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="dropbox--item">
+                    <td>
+                        <label for="discoveryFile">Discovery:</label>
+                    </td>
+                    <td>
+                        <input type="file" id="discoveryFile" name="fileUpload" accept=".pdf">
+                    </td>
+                </div>
+            </tr>
+            <tr class="upload">
+                <td colspan="2" class="upload">
+                    <input type="submit" value="Upload">
+                </td>
+            </tr>
+        </table>
     </form>
-
-
 </body>
 </html>
 
