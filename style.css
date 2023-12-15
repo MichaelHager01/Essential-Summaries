@@ -35,7 +35,7 @@ html {
     scroll-behavior: smooth;
     color: var(--clr-light);
     background-color: var(--clr-background);
-    font-family: 'Anonymous Pro', monospace;
+    font-family: 'Lora';
     font-weight: var(--fw-reg);
 }
 
@@ -48,6 +48,20 @@ section {
 img {
     display: block;
     max-width: 100%;
+}
+
+
+/* Language Toggle */
+
+
+#languageToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--clr-light);
+    color: var(--clr-black);
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 
