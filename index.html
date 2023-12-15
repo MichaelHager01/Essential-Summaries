@@ -4,67 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essential Summaries for Attorneys</title>
+    <title>Essential Summaries</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
     <header class="intro">
         <div class="intro--title">
-            <h1>Essential Summaries for Attorneys</h1>
+            <h1 class="english">Essential Summaries</h1>
+            <h1 class="spanish" style="display: none">Resúmenes Esenciales</h1>
         </div>
+        <button id="languageToggle">Español</button>
     </header>
 
     <!-- About us -->
     <section class="about">
-        <h2>About Us</h2>
-        <p>
+        <h2 class="english">About Us</h2>
+        <h2 class="spanish" style="display: none">Sobre Nosotros</h2>
+        <p class="english">
             30 plus years of litigation experience. We understand how summaries can speed the path to mediation, influence the decision to hire experts and/or dismiss the case. We are here to assist and help reach your goals.
+        </p>
+        <p class="spanish" style="display: none">
+            Más de 30 años de experiencia en litigios. Entendemos cómo los resúmenes pueden acelerar el camino hacia la mediación, influir en la decisión de contratar expertos y/o desechar el caso. Estamos aquí para ayudar y alcanzar sus objetivos.
         </p>
     </section>
 
     <!-- Pricing -->
     <section class="pricing">
-        <h2>Pricing</h2>
+        <h2 class="english">Pricing</h2>
+        <h2 class="spanish" style="display: none">Tarifas</h2>
         <table>
             <tr>
-                <td>Records up to 500 pages</td>
+                <td class="english">Records up to 500 pages</td>
+                <td class="spanish" style="display: none">Registros hasta 500 páginas</td>
                 <td class="pricing--price">$185</td>
             </tr>
             <tr>
-                <td>Records of 501-2,000 pages</td>
+                <td class="english">Records of 501-2,000 pages</td>
+                <td class="spanish" style="display: none">Registros de 501-2,000 páginas</td>
                 <td class="pricing--price">$545</td>
             </tr>
             <tr>
-                <td>Records of 2,001-4,000 pages</td>
+                <td class="english">Records of 2,001-4,000 pages</td>
+                <td class="spanish" style="display: none">Registros de 2,001-4,000 páginas</td>
                 <td class="pricing--price">$745</td>
             </tr>
             <tr>
-                <td>Records of 4,001-6,000 pages</td>
+                <td class="english">Records of 4,001-6,000 pages</td>
+                <td class="spanish" style="display: none">Registros de 4,001-6,000 páginas</td>
                 <td class="pricing--price">$945</td>
             </tr>
             <tr>
-                <td>Records over 6,000 pages</td>
+                <td class="english">Records over 6,000 pages</td>
+                <td class="spanish" style="display: none">Registros de más de 6,000 páginas</td>
                 <td class="pricing--price">
-                    <a href="mailto:rmagaly042@gmail.com">Contact us</a>
+                    <a href="mailto:michaelhswe@gmail.com" class="english">Contact us</a>
+                    <a href="mailto:michaelhswe@gmail.com" class="spanish" style="display: none">Contáctenos</a>
                 </td>
             </tr>
         </table>
     </section>
 
     <!-- Dropbox -->
-    <form class="dropbox">
-        <h3 class="dropbox--title">Send files for summary</h3>
+    <form class="dropbox" method='POST' action="main.py">
+        <h3 class="dropbox--title english">Send files for summary</h3>
+        <h3 class="dropbox--title spanish" style="display: none">Enviar archivos para resumen</h3>
         <table>
             <tr>
                 <div class="dropbox--item">
                     <td>
-                        <label for="depositionFile">Deposition:</label>
+                        <label for="depositionFile" class="english">Deposition:</label>
+                        <label for="depositionFile" class="spanish" style="display: none">Declaración:</label>
                     </td>
                     <td>
                         <input type="file" id="depositionFile" name="fileUpload" accept=".pdf">
@@ -74,7 +91,8 @@
             <tr>
                 <div class="dropbox--item">
                     <td>
-                        <label for="medicalRecordsFile">Medical Records:</label>
+                        <label for="medicalRecordsFile" class="english">Medical Records:</label>
+                        <label for="medicalRecordsFile" class="spanish" style="display: none">Expedientes Médicos:</label>
                     </td>
                     <td>
                         <input type="file" id="medicalRecordsFile" name="fileUpload" accept=".pdf">
@@ -84,10 +102,22 @@
             <tr>
                 <div class="dropbox--item">
                     <td>
-                        <label for="discoveryFile">Discovery:</label>
+                        <label for="discoveryFile" class="english">Discovery:</label>
+                        <label for="discoveryFile" class="spanish" style="display: none">Descubrimiento:</label>
                     </td>
                     <td>
                         <input type="file" id="discoveryFile" name="fileUpload" accept=".pdf">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="dropbox--item">
+                    <td>
+                        <label for="miscellaneousFile" class="english">Miscellaneous:</label>
+                        <label for="miscellaneousFile" class="spanish" style="display: none">Misceláneo:</label>
+                    </td>
+                    <td>
+                        <input type="file" id="miscellaneousFile" name="fileUpload" accept=".pdf">
                     </td>
                 </div>
             </tr>
@@ -98,6 +128,40 @@
             </tr>
         </table>
     </form>
+    <script>
+        // JavaScript to handle language toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elements with language-specific content
+            const englishElements = document.querySelectorAll('.english');
+            const spanishElements = document.querySelectorAll('.spanish');
+    
+            // Button element
+            const languageToggle = document.getElementById('languageToggle');
+    
+            // Initial language setting
+            let currentLanguage = 'english';
+    
+            // Function to toggle between English and Spanish
+            function toggleLanguage() {
+                if (currentLanguage === 'english') {
+                    // Switch to Spanish
+                    englishElements.forEach(element => element.style.display = 'none');
+                    spanishElements.forEach(element => element.style.display = 'block');
+                    languageToggle.textContent = 'English';
+                    currentLanguage = 'spanish';
+                } else {
+                    // Switch to English
+                    spanishElements.forEach(element => element.style.display = 'none');
+                    englishElements.forEach(element => element.style.display = 'block');
+                    languageToggle.textContent = 'Español';
+                    currentLanguage = 'english';
+                }
+            }
+    
+            // Event listener for button click
+            languageToggle.addEventListener('click', toggleLanguage);
+        });
+    </script>
 </body>
 </html>
 
