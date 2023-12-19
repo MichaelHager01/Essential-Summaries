@@ -1,0 +1,172 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+:root {
+    --clr-background: rgba(19, 20, 20, 0.7);;
+    --clr-light: #fff;
+    --clr-dark: #232121;
+    --clr-black: #000000;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1rem;
+    --fs-body: 1rem;
+}
+
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+    color: var(--clr-light);
+    background-color: var(--clr-background);
+    font-family: 'Lora', serif;
+    font-weight: var(--fw-reg);
+}
+
+
+section {
+    padding: 5em 2em;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* Language Toggle */
+
+
+#languageToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--clr-light);
+    color: var(--clr-black);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* Intro */
+
+
+.intro {
+    background-color: var(--clr-dark);
+    background-image: url(img/mallet.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--clr-light);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.intro--title {
+    width: 100%;
+}
+
+
+.intro--title h1 {
+    background-color: var(--clr-background);
+    text-align: center;
+}
+
+
+/* About Us */
+
+.about, .pricing {
+    background-color: var(--clr-dark);
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Pricing */
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+}
+
+tr {
+    text-align: left;
+}
+
+td {
+    padding: 5px 15px; 
+}
+
+
+.pricing--price {
+    text-align: center;
+}
+
+
+a {
+    color: var(--clr-light);
+}
+
+
+tr:hover {background-color: #a8a8a8;}
+
+
+/* Dropbox */
+
+
+.dropbox {
+    background-color: var(--clr-black);
+    height: 40vh;
+    width: 100%;
+    text-align: center;
+}
+
+
+.dropbox--title {
+    padding: 15px;
+}
+
+
+.upload {
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+/* Typography */
+
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
