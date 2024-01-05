@@ -3,8 +3,15 @@ from googleapiclient.errors import HttpError
 import io
 from Google import Create_Service
 from flask import Flask, render_template, request
+import sys
 
 app = Flask(__name__)
+path = '/home/essentialsummaries/mysite'
+
+if path not in sys.path:
+   sys.path.insert(0, path)
+
+from flask_app import app as application
 
 def create_folder(service, folder_name, parent_folder_id=None):
     body = {
@@ -21,8 +28,8 @@ def upload_to_google_drive(service, file_content, file_name, folder_id=None):
         'name': file_name,
         'parents': [folder_id] if folder_id else [],
     }
-    response = service.files().create(body=body, media_body=media_body).execute()
-    return response
+    service.files().create(body=body, media_body=media_body).execute()
+    return
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -40,7 +47,7 @@ def index():
         if not any([deposition_file and deposition_file.filename, medical_records_file and medical_records_file.filename, discovery_file and discovery_file.filename, miscellaneous_file and miscellaneous_file.filename]):
             return render_template('index.html', success_message=success_message)
 
-        CLIENT_SECRET_FILE = 'client_secret_EssentialSummaries.json'
+        CLIENT_SECRET_FILE = '/home/essentialsummaries/mysite/client_secret_EssentialSummaries.json'
         API_NAME = 'drive'
         API_VERSION = 'v3'
         SCOPES = ['https://www.googleapis.com/auth/drive']
@@ -55,24 +62,18 @@ def index():
 
         # Upload files to Google Drive
         if deposition_file is not None:
-            deposition_response = upload_to_google_drive(service, deposition_file.read(), "Deposition | " + deposition_file.filename, subfolder_id)
-            print("Deposition File ID:", deposition_response['id'])
+            upload_to_google_drive(service, deposition_file.read(), "Deposition | " + deposition_file.filename, subfolder_id)
 
         if medical_records_file is not None:
-            medical_records_response = upload_to_google_drive(service, medical_records_file.read(), "Medical Records | " + medical_records_file.filename, subfolder_id)
-            print("Medical Records File ID:", medical_records_response['id'])
+            upload_to_google_drive(service, medical_records_file.read(), "Medical Records | " + medical_records_file.filename, subfolder_id)
 
         if discovery_file is not None:
-            discovery_response = upload_to_google_drive(service, discovery_file.read(), "Discovery | " + discovery_file.filename, subfolder_id)
-            print("Discovery File ID:", discovery_response['id'])
+            upload_to_google_drive(service, discovery_file.read(), "Discovery | " + discovery_file.filename, subfolder_id)
 
         if miscellaneous_file is not None:
-            miscellaneous_response = upload_to_google_drive(service, miscellaneous_file.read(), "Miscellaneous | " + miscellaneous_file.filename, subfolder_id)
-            print("Miscellaneous File ID:", miscellaneous_response['id'])
+            upload_to_google_drive(service, miscellaneous_file.read(), "Miscellaneous | " + miscellaneous_file.filename, subfolder_id)
 
         success_message = "UPLOAD SUCCESSFUL: We will be reviewing your documents and will reach out shortly."
 
     return render_template('index.html', success_message=success_message)
 
-if __name__ == '__main__':
-    app.run(debug=False)
