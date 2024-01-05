@@ -34,9 +34,13 @@
 html {
     scroll-behavior: smooth;
     color: var(--clr-light);
-    background-color: var(--clr-background);
+    background-color: var(--clr-dark);
     font-family: 'Lora', serif;
     font-weight: var(--fw-reg);
+}
+
+body, html {
+    overflow-x: hidden;
 }
 
 
@@ -116,7 +120,7 @@ tr {
 }
 
 td {
-    padding: 5px 15px; 
+    padding: 5px 15px;
 }
 
 
@@ -138,14 +142,14 @@ tr:hover {background-color: #a8a8a8;}
 
 .dropbox {
     background-color: var(--clr-black);
-    height: 40vh;
+    height: 60vh;
     width: 100%;
     text-align: center;
 }
 
 
 .dropbox--title {
-    padding: 15px;
+    padding: 30px;
 }
 
 
