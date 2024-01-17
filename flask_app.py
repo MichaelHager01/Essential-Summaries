@@ -67,16 +67,16 @@ def index():
         subfolder_id = create_folder(service, email, website_uploads_folder_id)
 
         # Upload files to Google Drive
-        if deposition_file is not None:
+        if deposition_file.filename != '':
             upload_to_google_drive(service, deposition_file.read(), "Deposition | " + deposition_file.filename, subfolder_id)
 
-        if medical_records_file is not None:
+        if medical_records_file.filename != '':
             upload_to_google_drive(service, medical_records_file.read(), "Medical Records | " + medical_records_file.filename, subfolder_id)
 
-        if discovery_file is not None:
+        if discovery_file.filename != '':
             upload_to_google_drive(service, discovery_file.read(), "Discovery | " + discovery_file.filename, subfolder_id)
 
-        if miscellaneous_file is not None:
+        if miscellaneous_file.filename != '':
             upload_to_google_drive(service, miscellaneous_file.read(), "Miscellaneous | " + miscellaneous_file.filename, subfolder_id)
 
         success_message = "UPLOAD SUCCESSFUL: We will be reviewing your documents and will reach out shortly."
